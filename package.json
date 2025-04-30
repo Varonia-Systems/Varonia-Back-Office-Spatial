@@ -1,0 +1,10 @@
+{
+  "name": "com.varonia.vbospatial",
+  "version": "1.0.0",
+  "displayName": "Varonia Back Office Spatial Addon",
+  "description": "This package provides the boundary system used in Varonia games.",
+  "unity": "2019.4",
+  "author": {
+    "name": "Varonia"
+  }
+}

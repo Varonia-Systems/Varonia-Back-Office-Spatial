@@ -1,0 +1,17 @@
+{
+    "name": "VboSpatial.Runtime",
+    "rootNamespace": "",
+    "references": [
+        "VboBase.Editor",
+        "VboBase.Runtime"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
