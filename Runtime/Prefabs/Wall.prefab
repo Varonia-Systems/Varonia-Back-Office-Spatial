@@ -112,7 +112,7 @@ GameObject:
   - component: {fileID: 1706114537717257484}
   - component: {fileID: 7630915013176718060}
   - component: {fileID: 5978164985850684934}
-  m_Layer: 30
+  m_Layer: 10
   m_Name: _InWall
   m_TagString: IN
   m_Icon: {fileID: 0}
@@ -341,7 +341,7 @@ GameObject:
   - component: {fileID: 4249306110959321928}
   - component: {fileID: 1138560958635283779}
   - component: {fileID: 7914290488356929015}
-  m_Layer: 30
+  m_Layer: 10
   m_Name: _OutWall
   m_TagString: OUT
   m_Icon: {fileID: 0}
