@@ -32,6 +32,35 @@ public class InBoundary : MonoBehaviour
 
     private GameObject debugVaronia; // Objet utilisé pour envoyer des messages de debug
 
+
+
+    private void Awake()
+    {
+       
+            var settings = LayerSettings.Load();
+            if (settings == null)
+            {
+                Debug.LogError("LayerSettings not found in Resources.");
+                return;
+            }
+
+            int layer = LayerMask.NameToLayer(settings.requiredLayerName);
+            if (layer == -1)
+            {
+                Debug.LogError("Configured layer doesn't exist.");
+                return;
+            }
+
+        layerMask.value = 1 << layer;
+
+
+    }
+
+
+
+
+
+
     private void OnEnable()
     {
         if (autoStart)

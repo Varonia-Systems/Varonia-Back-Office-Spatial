@@ -101,7 +101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   layerMask:
     serializedVersion: 2
-    m_Bits: 1073742848
+    m_Bits: 0
   autoStart: 1
   lockRotation: 0
   isPlayer: 0
