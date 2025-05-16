@@ -80,7 +80,7 @@ public class Boundary : MonoBehaviour
             boundary.SetActive(true);
 
         SpatialOK = true;
-        yield return null;
+        yield return new WaitForSeconds(0.1f);
 
         transform.SetParent(tempParent, false); // Reattach to original parent
         BoundaryIsReady.Invoke(); // Notify that boundaries are ready
