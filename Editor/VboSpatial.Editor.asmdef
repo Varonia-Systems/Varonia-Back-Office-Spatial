@@ -1,0 +1,18 @@
+{
+    "name": "VboSpatial.Editor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:07a0264522c7de249ad90e747712b1ac"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
