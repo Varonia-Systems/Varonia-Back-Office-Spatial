@@ -132,6 +132,7 @@ public class Boundary : MonoBehaviour
             BuildWalls(boundary, boundaryParent, index);
 
             var center = Instantiate(Center_, FindCenterOfTransforms(boundary.Points), Quaternion.identity, transform).GetComponent<InBoundary>();
+            yield return new WaitForSeconds(0.1f);
 
             if (boundary.MainBoundary)
             {
@@ -181,6 +182,7 @@ public class Boundary : MonoBehaviour
 
     private void AdjustBoundaryOrientation(Boundary_ boundary, GameObject parent, InBoundary center)
     {
+
         if (!center) return;
 
         // If boundary is out of limits, flip it
