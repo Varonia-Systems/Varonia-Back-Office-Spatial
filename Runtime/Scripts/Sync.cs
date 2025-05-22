@@ -1,11 +1,13 @@
 
+using System.Collections;
 using UnityEngine;
 using VaroniaBackOffice;
 
 public class Sync : MonoBehaviour
 {
-    public void Start()
+    public IEnumerator Start()
     {
+        yield return new WaitUntil(() => Boundary.Instance != null);
         Boundary.Instance.BoundaryIsReady.AddListener(Ready);
     }
 

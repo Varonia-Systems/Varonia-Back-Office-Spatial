@@ -47,9 +47,6 @@ public class Boundary : MonoBehaviour
     private static readonly int MaskCentersCountID = Shader.PropertyToID("_MaskCentersCount");
     private static readonly int MainTexID = Shader.PropertyToID("_MainTex");
 
-    //====================================================================//
-    //                        Unity Built-in Methods                     //
-    //====================================================================//
 
     private void Awake()
     {
@@ -59,6 +56,12 @@ public class Boundary : MonoBehaviour
     }
 
     //----------------------------------------------------------------------
+
+
+    private void OnDestroy()
+    {
+        Instance = null;
+    }
 
     private IEnumerator Start()
     {
