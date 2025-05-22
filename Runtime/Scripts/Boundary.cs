@@ -9,7 +9,6 @@ public class Boundary : MonoBehaviour
 {
     //===== Public Fields =====//
 
-    public static Boundary Instance;
 
     [Header("Prefabs & Materials")]
     public GameObject Center_; // Center prefab
@@ -50,7 +49,7 @@ public class Boundary : MonoBehaviour
 
     private void Awake()
     {
-        Instance = this; // Setup singleton instance
+       
         tempParent = transform.parent; // Store parent reference
         transform.parent = null; // Detach during setup
     }
@@ -58,11 +57,7 @@ public class Boundary : MonoBehaviour
     //----------------------------------------------------------------------
 
 
-    private void OnDestroy()
-    {
-        Instance = null;
-    }
-
+   
     private IEnumerator Start()
     {
         // If the spatial config is missing, destroy this object
@@ -86,7 +81,18 @@ public class Boundary : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
 
         transform.SetParent(tempParent, false); // Reattach to original parent
+
+
         BoundaryIsReady.Invoke(); // Notify that boundaries are ready
+
+        var A = Object.FindObjectsByType<Sync>(FindObjectsSortMode.None);
+
+        foreach (var item in A)
+        {
+            item.Ready();
+        }
+
+
     }
 
     //----------------------------------------------------------------------
