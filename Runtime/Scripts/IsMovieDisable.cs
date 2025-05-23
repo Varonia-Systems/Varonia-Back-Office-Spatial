@@ -11,7 +11,15 @@ public class IsMovieDisable : MonoBehaviour
     private MeshRenderer meshRenderer;
     private Transform childTransform;
 
-    private IEnumerator Start()
+
+
+
+    private void OnEnable()
+    {
+        StartCoroutine(Start_());
+    }
+
+    private IEnumerator Start_()
     {
         // Wait until VaroniaConfig is fully initialized
         yield return new WaitUntil(() => Config.VaroniaConfig != null);
