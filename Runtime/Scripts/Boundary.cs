@@ -252,13 +252,23 @@ public class Boundary : MonoBehaviour
 
         foreach (var obstacle in boundary.Obstacles)
         {
-            GameObject prefab = obstacle.Size switch
+            GameObject prefab;
+            switch (obstacle.Size)
             {
-                ObstacleSize.Small => SmallObstacle,
-                ObstacleSize.Medium => MediumObstacle,
-                ObstacleSize.Large => LargeObstacle,
-                _ => null
-            };
+                case ObstacleSize.Small:
+                    prefab = SmallObstacle;
+                    break;
+                case ObstacleSize.Medium:
+                    prefab = MediumObstacle;
+                    break;
+                case ObstacleSize.Large:
+                    prefab = LargeObstacle;
+                    break;
+                default:
+                    prefab = null;
+                    break;
+            }
+
 
             if (prefab != null)
             {
