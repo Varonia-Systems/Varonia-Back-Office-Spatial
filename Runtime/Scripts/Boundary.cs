@@ -49,7 +49,7 @@ public class Boundary : MonoBehaviour
 
     private void Awake()
     {
-       
+
         tempParent = transform.parent; // Store parent reference
         transform.parent = null; // Detach during setup
     }
@@ -57,7 +57,7 @@ public class Boundary : MonoBehaviour
     //----------------------------------------------------------------------
 
 
-   
+
     private IEnumerator Start()
     {
         // If the spatial config is missing, destroy this object
@@ -85,7 +85,11 @@ public class Boundary : MonoBehaviour
 
         BoundaryIsReady.Invoke(); // Notify that boundaries are ready
 
+#if UNITY_2022_1_OR_NEWER
         var A = Object.FindObjectsByType<Sync>(FindObjectsSortMode.None);
+#else
+       var A = Object.FindObjectsOfType<Sync>();   
+#endif
 
         foreach (var item in A)
         {
