@@ -60,12 +60,22 @@ public class Boundary : MonoBehaviour
 
     private IEnumerator Start()
     {
+#if !VBO_VORTEX
         // If the spatial config is missing, destroy this object
         if (!File.Exists(Config.VaroniaFolder_Path + "/NewSpatial.json"))
         {
             Destroy(gameObject);
             yield break;
         }
+#else
+  // If the spatial config is missing, destroy this object
+        if (!File.Exists(Config.VaroniaFolder_Path + "/NewSpatial.json") && !Config.VaroniaConfig.UseVortexBackOffice )
+        {
+            Destroy(gameObject);
+            yield break;
+        }
+
+#endif
 
         // Wait for config to be fully loaded
         while (Config.Spatial == null)
