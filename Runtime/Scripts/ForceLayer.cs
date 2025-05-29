@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class LayerUser : MonoBehaviour
+public class ForceLayer : MonoBehaviour
 {
     void Start()
     {
