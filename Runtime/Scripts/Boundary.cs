@@ -134,7 +134,7 @@ public class Boundary : MonoBehaviour
     //                            Custom Methods                          //
     //====================================================================//
 
-    private void ClearChildren()
+    public void ClearChildren()
     {
         // Destroy all child objects
         for (int i = transform.childCount - 1; i >= 0; i--)
@@ -179,7 +179,7 @@ public class Boundary : MonoBehaviour
 
     //----------------------------------------------------------------------
 
-    private void BuildWalls(Boundary_ boundary, GameObject parent, int index)
+    public void BuildWalls(Boundary_ boundary, GameObject parent, int index)
     {
         for (int i = 0; i < boundary.Points.Count; i++)
         {
@@ -205,7 +205,7 @@ public class Boundary : MonoBehaviour
 
     //----------------------------------------------------------------------
 
-    private void AdjustBoundaryOrientation(Boundary_ boundary, GameObject parent, InBoundary center)
+    public void AdjustBoundaryOrientation(Boundary_ boundary, GameObject parent, InBoundary center)
     {
 
         if (!center) return;
@@ -247,7 +247,7 @@ public class Boundary : MonoBehaviour
 
     //----------------------------------------------------------------------
 
-    private void RemoveCollidersIfNeeded(Boundary_ boundary, GameObject parent)
+    public void RemoveCollidersIfNeeded(Boundary_ boundary, GameObject parent)
     {
         // Remove colliders from non-main boundaries
         if (!boundary.MainBoundary)
@@ -259,7 +259,7 @@ public class Boundary : MonoBehaviour
 
     //----------------------------------------------------------------------
 
-    private void AddObstacles(Boundary_ boundary, GameObject parent)
+    public void AddObstacles(Boundary_ boundary, GameObject parent)
     {
         if (boundary.Obstacles == null)
             return;
@@ -294,7 +294,7 @@ public class Boundary : MonoBehaviour
 
     //----------------------------------------------------------------------
 
-    private void InitializeMaterials()
+    public void InitializeMaterials()
     {
         // Initialize wall materials based on visibility setting
         for (int x = 0; x < meshRenderers.Count; x++)
@@ -318,7 +318,7 @@ public class Boundary : MonoBehaviour
 
     //----------------------------------------------------------------------
 
-    private void UpdateMaskCenters()
+    public void UpdateMaskCenters()
     {
         maskCenters.Clear();
 
@@ -339,7 +339,7 @@ public class Boundary : MonoBehaviour
 
     //----------------------------------------------------------------------
 
-    private void UpdateMaterialsWithTracking()
+    public void UpdateMaterialsWithTracking()
     {
         for (int x = 0; x < meshRenderers.Count; x++)
         {
@@ -360,7 +360,7 @@ public class Boundary : MonoBehaviour
     //                           Utility Methods                          //
     //====================================================================//
 
-    private static Transform GetChildByName(Transform parent, string childName)
+    public static Transform GetChildByName(Transform parent, string childName)
     {
         // Find a child by name
         foreach (Transform child in parent)
@@ -371,7 +371,7 @@ public class Boundary : MonoBehaviour
         return null;
     }
 
-    private static Vector3 FindCenterOfTransforms(List<Vector3_> points)
+    public static Vector3 FindCenterOfTransforms(List<Vector3_> points)
     {
         // Calculate center of multiple points
         var bounds = new Bounds(points[0].asVec3(), Vector3.zero);
