@@ -143,7 +143,7 @@ public class Boundary : MonoBehaviour
 
     //----------------------------------------------------------------------
 
-    private IEnumerator BuildBoundaries()
+    public IEnumerator BuildBoundaries()
     {
         int index = 0;
 
