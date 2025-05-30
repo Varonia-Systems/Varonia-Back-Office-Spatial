@@ -36,7 +36,7 @@ public class Boundary : MonoBehaviour
 
     private List<Vector4> maskCenters = new List<Vector4>(); // Center points for shaders
     private Transform tempParent; // Temporary parent during setup
-    private bool firstLoop = true; // Used for first update pass
+    public bool firstLoop = true; // Used for first update pass
 
     // Shader property IDs to avoid string calls
     private static readonly int ColorID = Shader.PropertyToID("_Color");
