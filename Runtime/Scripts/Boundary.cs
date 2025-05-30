@@ -35,7 +35,7 @@ public class Boundary : MonoBehaviour
     //===== Private Fields =====//
 
     private List<Vector4> maskCenters = new List<Vector4>(); // Center points for shaders
-    private Transform tempParent; // Temporary parent during setup
+    public Transform tempParent; // Temporary parent during setup
     public bool firstLoop = true; // Used for first update pass
 
     // Shader property IDs to avoid string calls
@@ -47,7 +47,7 @@ public class Boundary : MonoBehaviour
     private static readonly int MainTexID = Shader.PropertyToID("_MainTex");
 
 
-    private void Awake()
+    public void Awake()
     {
 
         tempParent = transform.parent; // Store parent reference
