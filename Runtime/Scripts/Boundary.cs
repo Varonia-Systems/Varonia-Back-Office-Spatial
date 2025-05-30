@@ -47,7 +47,7 @@ public class Boundary : MonoBehaviour
     private static readonly int MainTexID = Shader.PropertyToID("_MainTex");
 
 
-    public void Awake()
+    public  virtual void Awake()
     {
 
         tempParent = transform.parent; // Store parent reference
